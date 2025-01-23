@@ -16,7 +16,16 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className={`${inter.className} bg-black text-white`}>{children}</body>
+      <body className={`${inter.className} text-white min-h-screen relative`}>
+        {/* Fondo animado */}
+        <div
+          className="absolute inset-0 -z-10 bg-cover bg-center animate-bg"
+          style={{
+            backgroundImage: "url('/imagenes/fondopantalla3.png')",
+          }}
+        ></div>
+        {children}
+      </body>
     </html>
   )
 }

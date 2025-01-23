@@ -14,7 +14,7 @@ export default function Contact() {
         initial={{ scale: 0.5, y: 100, x: -100 }}
         whileInView={{ scale: 1, y: 0, x: 0 }}
         transition={{ duration: 1.5, ease: "easeOut" }}
-        className="absolute right-0 bottom-0 w-96 h-96 opacity-20 pointer-events-none"
+        className="absolute right-0 bottom-[105px] h-96 opacity-100 pointer-events-none"
       >
         <Image
           src="/imagenes/rocket2.png"

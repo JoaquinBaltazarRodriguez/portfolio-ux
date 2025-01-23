@@ -4,40 +4,24 @@
 
 :root {
   --foreground-rgb: 255, 255, 255;
-  --background-start-rgb: 0, 0, 0;
-  --background-end-rgb: 0, 0, 0;
 }
 
-/* Fondo de estrellas con imagen y animación */
+html,
 body {
-  margin: 0;
-  padding: 0;
-  min-height: 100vh;
+  background: transparent;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
   overflow-x: hidden;
-  background-color: #000; /* Fondo negro para el espacio */
-  background-image: url('/imagenes/fondopantalla2.png'); /* Coloca la ruta de la imagen */
-  background-size: cover; /* Asegura que la imagen cubra toda la pantalla */
-  background-position: 0 0; /* Inicia la imagen desde la esquina superior izquierda */
-  background-attachment: fixed; /* Mantiene el fondo fijo mientras se desplaza la página */
-  animation: moveStars 150s linear infinite; /* Animación infinita para mover las estrellas */
 }
 
-/* Animación para mover las estrellas */
-@keyframes moveStars {
-  0% {
-    background-position: 0 0; /* Comienza en la posición inicial */
-  }
-  100% {
-    background-position: 5000px 5000px; /* Mueve el fondo hacia la derecha y hacia abajo */
-  }
-}
-
-/* Suavizar el desplazamiento de la página */
+/* Smooth scrolling */
 html {
   scroll-behavior: smooth;
 }
 
-/* Barra de desplazamiento personalizada */
+/* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 10px;
 }
@@ -54,3 +38,34 @@ html {
 ::-webkit-scrollbar-thumb:hover {
   background: #ca8a04;
 }
+
+@keyframes twinkle {
+  0% {
+    transform: scale(1) rotate(0deg);
+    opacity: 0.5;
+  }
+  50% {
+    transform: scale(1.05) rotate(0.5deg);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+    opacity: 0.5;
+  }
+}
+
+.animate-twinkle {
+  animation: twinkle 8s infinite ease-in-out;
+}
+
+/* Asegurarse de que el contenido principal esté por encima del fondo */
+main {
+  position: relative;
+  z-index: 1;
+}
+
+/* Hacer transparente cualquier fondo negro residual */
+.bg-black {
+  background-color: transparent !important;
+}
+

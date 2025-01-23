@@ -5,12 +5,12 @@ import { motion, useAnimation, useInView } from "framer-motion"
 import { useLanguage } from "@/context/language-context"
 
 const skills = [
-  { name: "Photoshop", icon: "/imagenes/photoshoop.png" },
-  { name: "Illustrator", icon: "/imagenes/illustrator.png" },
-  { name: "Figma", icon: "/imagenes/figma(2).png" },
-  { name: "HTML", icon: "/imagenes/html.png" },
-  { name: "CSS", icon: "/imagenes/css.png" },
-  { name: "JavaScript", icon: "/imagenes/javascript.png" },
+  { name: "Photoshop", icon: "/placeholder.svg?height=64&width=64" },
+  { name: "Illustrator", icon: "/placeholder.svg?height=64&width=64" },
+  { name: "Figma", icon: "/placeholder.svg?height=64&width=64" },
+  { name: "HTML", icon: "/placeholder.svg?height=64&width=64" },
+  { name: "CSS", icon: "/placeholder.svg?height=64&width=64" },
+  { name: "JavaScript", icon: "/placeholder.svg?height=64&width=64" },
 ]
 
 export default function Skills() {
@@ -39,10 +39,10 @@ export default function Skills() {
       initial="hidden"
       variants={containerVariants}
       id="skills"
-      className="py-20 bg-gradient-to-b from-black to-gray-900"
+      className="py-20"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.h2 variants={containerVariants} className="text-3xl font-bold text-center mb-12">
+        <motion.h2 variants={containerVariants} className="text-3xl font-bold text-white text-center mb-12">
           {t("my_skills")}
         </motion.h2>
 
@@ -55,10 +55,10 @@ export default function Skills() {
                 hidden: { opacity: 0, y: 50 },
               }}
               className="flex flex-col items-center gap-4 p-6 rounded-xl bg-gray-800/50
-                         backdrop-blur-sm hover:bg-gray-800 transition-colors duration-300"
+                         backdrop-blur-sm hover:bg-gray-800/70 transition-colors duration-300"
             >
               <img src={skill.icon || "/placeholder.svg"} alt={skill.name} className="w-16 h-16 object-contain" />
-              <p className="text-sm font-medium text-gray-300">{skill.name}</p>
+              <p className="text-sm font-medium text-white">{skill.name}</p>
             </motion.div>
           ))}
         </div>

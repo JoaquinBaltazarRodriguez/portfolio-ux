@@ -76,10 +76,10 @@ export default function Projects() {
       initial="hidden"
       variants={containerVariants}
       id="projects"
-      className="py-20 bg-[#010b19]"
+      className="py-20"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.h2 variants={containerVariants} className="text-3xl font-bold mb-12">
+        <motion.h2 variants={containerVariants} className="text-3xl font-bold text-white mb-12">
           {t("project")}
         </motion.h2>
 
@@ -91,7 +91,7 @@ export default function Projects() {
                 visible: { opacity: 1, y: 0, transition: { delay: index * 0.1 } },
                 hidden: { opacity: 0, y: 50 },
               }}
-              className="bg-[#0a1629] rounded-lg overflow-hidden border border-gray-800"
+              className="bg-gray-800/50 backdrop-blur-sm rounded-lg overflow-hidden border border-gray-700"
             >
               <div className="p-6 flex gap-4">
                 <img
@@ -100,8 +100,8 @@ export default function Projects() {
                   className="w-24 h-24 object-cover rounded"
                 />
                 <div className="flex-1">
-                  <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
-                  <p className="text-gray-400 text-sm mb-4">{t(project.descKey)}</p>
+                  <h3 className="text-xl font-semibold mb-2 text-white">{project.title}</h3>
+                  <p className="text-gray-300 text-sm mb-4">{t(project.descKey)}</p>
                   <div className="flex gap-3">
                     <a
                       href={project.demo}
@@ -109,8 +109,8 @@ export default function Projects() {
                     >
                       {t("view_demo")}
                     </a>
-                    <a href={project.github} className="p-2 bg-gray-800 rounded hover:bg-gray-700 transition-colors">
-                      <Github className="w-5 h-5" />
+                    <a href={project.github} className="p-2 bg-gray-700/50 rounded hover:bg-gray-700 transition-colors">
+                      <Github className="w-5 h-5 text-white" />
                     </a>
                   </div>
                 </div>

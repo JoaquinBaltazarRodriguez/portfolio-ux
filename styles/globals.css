@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Elimina cualquier estilo personalizado para .bg-black o .bottom-0 si los tienes */
+
+body {
+  /* Asegúrate de que no haya estilos que puedan interferir con tu imagen de fondo */
+  background-color: transparent !important;
+  background-image: url(/imagenes/fondopantalla3.png);
+}
